@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRADIP REGMI GAMER | Official Gaming Hub</title>
-  <meta name="description" content="Official website of PRADIP REGMI GAMER. Open Worlds, Epic Journeys, GTA V, RDR2, Ghost of Tsushima, Farming Simulator 25.">
+  <meta name="description" content="Official website of PRADIP REGMI GAMER. GTA V, RDR2, Ghost of Tsushima, Farming Simulator 25, SnowRunner, Marvel's Spider-Man Remastered, and God of War.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
@@ -269,6 +269,15 @@
       flex-direction: column;
     }
 
+    .game-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      z-index: 2;
+    }
+
     .game-card:hover {
       transform: translateY(-8px);
       border-color: var(--secondary);
@@ -291,6 +300,55 @@
       display: flex;
       flex-direction: column;
       flex-grow: 1;
+    }
+
+    .game-badge {
+      align-self: flex-start;
+      margin-bottom: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      border-radius: 999px;
+      color: var(--secondary);
+      background: rgba(0, 240, 255, 0.08);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .stats-strip {
+      max-width: 1000px;
+      margin: -2.5rem auto 0;
+      position: relative;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    .stat-item {
+      padding: 1.4rem;
+      text-align: center;
+      background: rgba(14, 17, 27, 0.96);
+    }
+
+    .stat-item strong {
+      display: block;
+      color: var(--secondary);
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+    }
+
+    .stat-item span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .game-card-title {
@@ -409,6 +467,10 @@
     }
 
     @media (max-width: 768px) {
+      .stats-strip {
+        grid-template-columns: 1fr;
+        margin: 0 1rem;
+      }
       .menu-toggle {
         display: flex;
       }
@@ -465,6 +527,12 @@
     </div>
   </section>
 
+  <div class="stats-strip" aria-label="Channel highlights">
+    <div class="stat-item"><strong>7</strong><span>Featured Games</span></div>
+    <div class="stat-item"><strong>Open Worlds</strong><span>Epic Adventures</span></div>
+    <div class="stat-item"><strong>Nepal</strong><span>Gaming Creator</span></div>
+  </div>
+
   <!-- Featured Games Grid -->
   <section id="games">
     <h2 class="section-title">Featured Titles</h2>
@@ -475,6 +543,7 @@
       <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="game-card">
         <img src="assets/gta-v-official.jpg" alt="Official Grand Theft Auto V artwork" class="game-card-img">
         <div class="game-card-content">
+          <span class="game-badge">Open World</span>
           <h3 class="game-card-title">GTA V</h3>
           <p class="game-card-desc">High-stakes heists, open-world chaos, and custom mods action.</p>
           <span class="btn-secondary">Watch Gameplay</span>
@@ -485,6 +554,7 @@
       <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="game-card">
         <img src="assets/rdr2-official.jpg" alt="Official Red Dead Redemption 2 artwork" class="game-card-img">
         <div class="game-card-content">
+          <span class="game-badge">Western RPG</span>
           <h3 class="game-card-title">RDR 2</h3>
           <p class="game-card-desc">Atmospheric western adventure, cinematic storyline, and wilderness exploration.</p>
           <span class="btn-secondary">Watch Gameplay</span>
@@ -495,8 +565,42 @@
       <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="game-card">
         <img src="assets/ghost-of-tsushima-official.jpg" alt="Official Ghost of Tsushima Director's Cut artwork" class="game-card-img">
         <div class="game-card-content">
+          <span class="game-badge">Samurai Action</span>
           <h3 class="game-card-title">Ghost of Tsushima</h3>
           <p class="game-card-desc">Samurai combat, stealth mechanics, and cinematic Japanese landscapes.</p>
+          <span class="btn-secondary">Watch Gameplay</span>
+        </div>
+      </a>
+
+      <!-- SnowRunner -->
+      <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="game-card">
+        <img src="https://cdn.focus-home.com/fhi-fastforward-admin/resources/games/snowrunner/images/03082020_9132363e20744a3d8db870d9e825c9bc.png" alt="Official SnowRunner artwork" class="game-card-img">
+        <div class="game-card-content">
+          <span class="game-badge">Off-Road Simulation</span>
+          <h3 class="game-card-title">SnowRunner</h3>
+          <p class="game-card-desc">Extreme terrain, heavy hauling, powerful trucks, and co-op expeditions.</p>
+          <span class="btn-secondary">Watch Gameplay</span>
+        </div>
+      </a>
+
+      <!-- Marvel's Spider-Man Remastered -->
+      <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="game-card">
+        <img src="https://gmedia.playstation.com/is/image/SIEPDC/marvels-spider-man-remastered-screenshot-hero-en-02aug22?$1600px$" alt="Official Marvel's Spider-Man Remastered artwork" class="game-card-img">
+        <div class="game-card-content">
+          <span class="game-badge">Superhero Action</span>
+          <h3 class="game-card-title">Spider-Man Remastered</h3>
+          <p class="game-card-desc">Web-swing through Marvel's New York and face iconic villains.</p>
+          <span class="btn-secondary">Watch Gameplay</span>
+        </div>
+      </a>
+
+      <!-- God of War -->
+      <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="game-card">
+        <img src="https://gmedia.playstation.com/is/image/SIEPDC/god-of-war-screen-07-ps4-us-12jun17?$1600px$" alt="Official God of War artwork" class="game-card-img">
+        <div class="game-card-content">
+          <span class="game-badge">Mythic Adventure</span>
+          <h3 class="game-card-title">God of War</h3>
+          <p class="game-card-desc">Brutal Norse combat, epic encounters, and a powerful father-son journey.</p>
           <span class="btn-secondary">Watch Gameplay</span>
         </div>
       </a>
@@ -544,6 +648,39 @@
         <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="btn-yt" style="align-self: flex-start;">
           Watch Farming Sim
         </a>
+      </div>
+    </div>
+
+    <!-- SnowRunner Showcase -->
+    <div class="showcase-item">
+      <img src="https://cdn.focus-home.com/fhi-fastforward-admin/resources/games/snowrunner/images/03082020_9132363e20744a3d8db870d9e825c9bc.png" alt="Official SnowRunner artwork" class="showcase-img">
+      <div class="showcase-text">
+        <span class="showcase-tag">Off-Road Simulation</span>
+        <h3 class="showcase-title">SnowRunner Expeditions</h3>
+        <p>Conquer snow, mud, rivers, and dangerous terrain with a fleet of powerful off-road vehicles.</p>
+        <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="btn-yt" style="align-self: flex-start;">Watch SnowRunner</a>
+      </div>
+    </div>
+
+    <!-- Spider-Man Remastered Showcase -->
+    <div class="showcase-item">
+      <img src="https://gmedia.playstation.com/is/image/SIEPDC/marvels-spider-man-remastered-screenshot-hero-en-02aug22?$1600px$" alt="Official Marvel's Spider-Man Remastered artwork" class="showcase-img">
+      <div class="showcase-text">
+        <span class="showcase-tag">Superhero Action</span>
+        <h3 class="showcase-title">Spider-Man Remastered</h3>
+        <p>Experience fluid web-swinging, cinematic combat, and Peter Parker's adventure across Marvel's New York.</p>
+        <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="btn-yt" style="align-self: flex-start;">Watch Spider-Man</a>
+      </div>
+    </div>
+
+    <!-- God of War Showcase -->
+    <div class="showcase-item">
+      <img src="https://gmedia.playstation.com/is/image/SIEPDC/god-of-war-screen-07-ps4-us-12jun17?$1600px$" alt="Official God of War artwork" class="showcase-img">
+      <div class="showcase-text">
+        <span class="showcase-tag">Mythic Adventure</span>
+        <h3 class="showcase-title">God of War</h3>
+        <p>Journey through the Norse wilds with Kratos and Atreus in a story of combat, survival, and redemption.</p>
+        <a href="https://youtube.com/@freefire-np-1?si=FNr98qiNCJMnptnJ" target="_blank" rel="noopener" class="btn-yt" style="align-self: flex-start;">Watch God of War</a>
       </div>
     </div>
   </section>
